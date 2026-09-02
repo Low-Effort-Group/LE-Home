@@ -9,7 +9,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 @font-face {
     font-family: lowEffortFont;
-    src: url(/LowEffortFont.ttf);
+    src: url(LowEffortFont.ttf);
 }
 
 .bubble {
@@ -151,7 +151,7 @@ nav {
     left: 0;
     width: 100%;
     background: #bf00ff;
-    height: 67px;
+    height: calc(min(10vh, 10vw));
     display: flex;
     align-items: center;
     padding: 0 16px;
