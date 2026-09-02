@@ -8,7 +8,22 @@
   <meta name="author" content="Low Effort Group">
 </head>
 <body>
-  {% include "nav.html" %}
+  <nav>
+    <div class="logo-wrap">
+        <div class="dropdown">
+        <a href="/"><img src="/favicon.ico" alt="LEG" width="35" height="35"></a>
+        <div class="dropdown-content">
+            <a href="/work">Our work</a>
+            <a href="/members">Our members</a>
+        </div>
+        </div>
+    </div>
+
+    <div id="title"></div>
+    <noscript>
+        <div id="title">Low Effort Work</div>
+    </noscript>
+  </nav>
   <main>
     <div style="flex-grow: 1;">
       <br>
