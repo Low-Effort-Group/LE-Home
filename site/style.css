@@ -1,0 +1,290 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+}
+
+@font-face {
+    font-family: lowEffortFont;
+    src: url(/LowEffortFont.ttf);
+}
+
+.bubble {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 24px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.invisible {
+    box-shadow: none !important;
+}
+
+.bubble.wrap {
+    width: fit-content;
+    text-align: center;
+}
+
+.bubble.big {
+    width: 80%;
+    margin-top: 5px;
+}
+
+.bubble.medium {
+    width: 50%;
+}
+
+.purple {
+    background-color: #dfbfff;
+}
+
+.flex {
+    display: flex;
+    flex-grow: 1;
+}
+
+.bubble.unit{
+    width: 40%;
+    background-color: #fff;
+}
+
+.title {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    align-items: stretch;
+}
+
+.overflow {
+    overflow-x: auto;
+}
+
+table {
+    border-color: transparent;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: lightgrey;
+}
+
+th, td {
+    border: 1px solid lightgrey;
+}
+
+.v th, .v td {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+td {
+    background-color: whitesmoke;
+    padding: 8px;
+}
+
+.t {
+    color: white;
+    display:block;
+    width:100%; 
+    height:100%;
+}
+
+#upload, button {
+    font-family: lowEffortFont !important;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    background: #bf00ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: grey 0px 4px 8px;
+}
+
+.v th {
+    background-color: #bf00ff;
+    border-color: #dfbfff;
+}
+
+.v td {
+    border-color: #dfbfff;
+}
+
+#upload {
+    font-size: 14px;
+    width: 350px;
+}
+
+button:hover {
+    background: #a000cc;
+    box-shadow: grey 0px 2px 4px;
+}
+
+button:active {
+    background: #800099;
+    box-shadow: none;
+}
+
+.small-text {
+    font-size: 14px;
+    color: grey;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #bf00ff;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+    font-family: lowEffortFont !important;
+    z-index: 9999;
+}
+
+.fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.desc {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: #fff;
+    pointer-events: none;
+}
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    flex-direction: column;
+}
+
+.logo-wrap img {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: calc((56px - 35px) / 2) 0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 56px;
+    left: -16px;
+    display: none;
+    background: #bf00ff;
+    padding: 16px 16px;
+}
+.dropdown-content a, .dropdown-content a:visited, .dropdown-content a:active, .dropdown-content a:hover, .dropdown-content a:focus {
+    white-space: nowrap;
+    color: #fff !important;
+    text-decoration: none !important;
+    display: block;
+    font-size: 24px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.toolbar {
+    flex-grow: 0;
+    min-height: 100vh;
+    width: 198px;
+    z-index: 1;
+    color: #000;
+    background-color: #dfbfff;
+    overflow-x: hidden;
+    font-family: lowEffortFont !important;
+    padding-top: 20px;
+}
+
+.toolbar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    display: block;
+    color: #000
+}
+
+summary {
+    display: block;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.toolbar span {
+    position: relative;
+    margin-left: 5px;
+    display: flex;
+}
+
+.toolbar span:hover {
+    cursor: pointer;
+}
+
+.toolbar span::before {
+    content: "▶";
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    transition: rotate 200ms 200ms ease-in-out;
+}
+
+div.content {
+    box-sizing: border-box;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    transition: max-height 400ms ease-in-out, border 0ms 400ms linear;
+}
+
+details[open] + div.content {
+    max-height: 800px; /* Set a max-height value enough to show all the content */
+    transition: max-height 200ms ease-in-out, border 0ms linear;
+}
+
+details[open] span::before {
+    rotate: 90deg;
+    transition: rotate 200ms ease-in-out;
+}
+
+@media (max-width: 900px) {
+  .hide {
+    display: none !important;
+  }
+}
